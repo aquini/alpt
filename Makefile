@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -O0 -g3
-TESTS = alpt-a alpt-b
+TESTS = alpt-a alpt-b alpt-c
      
 all: $(TESTS)
      
