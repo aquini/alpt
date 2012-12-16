@@ -6,20 +6,46 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void)
+#define MAX_ITEMS 10
+#define MAX_BLKSZ 64
+
+char *blockptr;
+
+static inline void blocks_alloc_and_init(void)
 {
 	int i, j;
-	char *p;
+	for (i = 0; i < MAX_ITEMS; i++) {
+		blockptr = malloc(MAX_BLKSZ);
 
-	for (i=0; i<10; i++) {
-		p = malloc(1024);
-
-		for (j=0; j<1024; j++)
-			p[j] = 1;
+		for (j = 0; j < MAX_BLKSZ; j++)
+			blockptr[j] = 1;
 	}
+}
 
-	for (i=0; i<10; i++)
-		free(p);
+static inline void blocks_print_usage(void)
+{
+	int i, j;
+	for (i = 0; i < MAX_ITEMS; i++) {
+		printf("blk %d: ", i);
+		for (j = 0; j < MAX_BLKSZ; j++)
+			printf("%d", blockptr[j]);
+
+		printf("\n");
+	}
+}
+
+static inline void blocks_release(void)
+{
+	int i;
+	for (i = 0; i < MAX_ITEMS; i++)
+		free(blockptr);
+}
+
+int main(void)
+{
+	blocks_alloc_and_init();
+	blocks_print_usage();
+	blocks_release();
 
 	return 0;
 }
