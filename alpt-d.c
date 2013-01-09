@@ -9,11 +9,10 @@
  */
 
 #include <stdio.h>
-#include <stdint.h>
 
 int main(void) {
-	int32_t counter = 10;
-	uint32_t limiter = 0;
+	int counter = 10;
+	unsigned int limiter = 0;
 
 	while (1) {
 		printf("Decrementing limiter\n");
