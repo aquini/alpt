@@ -11,7 +11,7 @@
 
 char *blockptr;
 
-static inline void blocks_alloc_and_init(void)
+static void blocks_alloc_and_init(void)
 {
 	int i, j;
 	for (i = 0; i < MAX_ITEMS; i++) {
@@ -22,7 +22,7 @@ static inline void blocks_alloc_and_init(void)
 	}
 }
 
-static inline void blocks_print_usage(void)
+static void blocks_print_usage(void)
 {
 	int i, j;
 	for (i = 0; i < MAX_ITEMS; i++) {
@@ -34,7 +34,7 @@ static inline void blocks_print_usage(void)
 	}
 }
 
-static inline void blocks_release(void)
+static void blocks_release(void)
 {
 	int i;
 	for (i = 0; i < MAX_ITEMS; i++)

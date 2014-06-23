@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define __sizeof_arr(a) (sizeof(a) / sizeof(typeof(a[0] + 1)))
+#define __sizeof_arr(a) (sizeof(a) / sizeof(__typeof__(a[0])))
 
 int main(void)
 {
@@ -21,7 +21,7 @@ int main(void)
 		*(p+i) = 1UL;
 
 	for (i = 0; i <= __sizeof_arr(a); i++)
-		printf("a[%d]: %d\n", i, a[i]);
+		printf("a[%lu]: %lu\n", i, a[i]);
 
 	return 0;
 }

@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -O0 -g3
+CFLAGS = -O0 -g3 -Wall -Wextra -ansi
 TESTS = alpt-a alpt-b alpt-c
      
 all: $(TESTS)

@@ -11,11 +11,12 @@ static const char *magic_string = "abrakadabra-hokuspokus";
 
 int main(int argc, char *argv[])
 {
+	size_t str_sz = sizeof(magic_string);
 	char *input = "nononono";
 	if (argc > 1)
 		input = argv[1];
 
-	if (strncmp(input, magic_string, sizeof(magic_string)))
+	if (strncmp(input, magic_string, str_sz))
 		return 0;
 
 	return 1;
