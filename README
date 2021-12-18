@@ -1,14 +1,22 @@
 A Little Programming Test
 =========================
-These little code snippets can prove that even the simplest projects might bear severe BUGs. Your task is to propose fixes to alpt-*.c small projects, in order to make them run smooth and sanely, explaining how your fix addresses the issues you found out and why it's necessary.
+These little code snippets can prove that even the simplest projects might
+come with severe BUGs.
+Your task is to propose patch fixes to alpt-*.c small projects, in order to
+make them run smoothly and sanely. Explain, on each patch, how your changes
+address the issues you found out, and why it is a necessary fix.
 
 - BUILD INSTRUCTIONS:
 $ make
 
+
 - RUNNING INSTRUCTIONS:
 $ ./alpt-<ID>
+
 
 - EXPECTED RESULTS:
 $ ./alpt-<ID> &> /dev/null && echo $?
 0
 
+
+Happy bug hunting!
