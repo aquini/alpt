@@ -13,11 +13,14 @@ int main(int argc, char *argv[])
 {
 	size_t str_sz = sizeof(magic_string);
 	char *input = "nononono";
+
 	if (argc > 1)
 		input = argv[1];
 
-	if (strncmp(input, magic_string, str_sz))
+	if (strncmp(input, magic_string, str_sz)) {
+		printf("ACCESS GRANTED!\n");
 		return 0;
+	}
 
 	return 1;
 }

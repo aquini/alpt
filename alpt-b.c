@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define __sizeof_arr(a) (sizeof(a) / sizeof(__typeof__(a[0])))
+#define SIZEOF_ARRAY(a) (sizeof(a) / sizeof(__typeof__(a[0])))
 
 int main(void)
 {
@@ -15,12 +15,13 @@ int main(void)
 	unsigned long *p;
 
 	p = a;
-	printf("[i: %p][a: %p][p: %p]\n", &i, &a, p);
+	printf("[i: %p] [a: %p] [p: %p]\n",
+		(void *)&i, (void *)&a, (void *)p);
 
-	for (i = 0; i <= __sizeof_arr(a); i++)
+	for (i = 0; i <= SIZEOF_ARRAY(a); i++)
 		*(p+i) = 1UL;
 
-	for (i = 0; i <= __sizeof_arr(a); i++)
+	for (i = 0; i <= SIZEOF_ARRAY(a); i++)
 		printf("a[%lu]: %lu\n", i, a[i]);
 
 	return 0;
